@@ -5,4 +5,5 @@ app_name = 'Chat'
 
 urlpatterns = [
     path('',views.IndexView.as_view(), name = 'index'),
+    path('foo/',views.FooView.as_view(), name = 'foo')
 ]
