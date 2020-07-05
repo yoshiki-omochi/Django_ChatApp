@@ -5,6 +5,10 @@
     <title>2番目のページ</title>
 </head>
 <body>
-	<h1>Second Page</h1>
+	<form method = "Post">
+        {% csrf_token %}
+        {{User}}
+        <botton type = "submit">送信</botton>
+    </form>
 </body>
 </html>
