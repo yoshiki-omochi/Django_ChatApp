@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views import generic
 
 from django.http import HttpResponse
-from Chat.forms import UserForm
+from Chat.forms import TestuserForm
 
 
 
@@ -23,5 +23,5 @@ class TimelineView(generic.TemplateView):
 
 
 def post(request):
-    f = UserForm()
+    f = TestuserForm()
     return render(request, 'post.html', {'form1' : f})

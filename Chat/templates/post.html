@@ -8,8 +8,8 @@
     <h1>投稿ページのトップ</h1>
 	<form action = "" method = "Post">
     {% csrf_token %}
-        <table>{{form1.as_table}}
-        <tr><td colspan='2'><input type="submit" value="Submit"></td></tr>
+        <table>{{form1.as_p}}
+        <button type="submit">送信</button>
         </table>
     </form>
 </body>
