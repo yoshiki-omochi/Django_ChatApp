@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>トップページ</title>
-</head>
-<body>
-	<h1>掲示板サイトのトップ</h1>
-  <div><a href= "./post">投稿ページ</div>
+{% extends 'base.html' %}
 
-  <div><a href= "./timeline">みんなの投稿</div>
-</body>
-</html>
+{% load static %}
+
+{% block title %}トップページ{% endblock %}
+
+{% block h1%}掲示板サイトのトップ{% endblock %}
+
+{% block body%}
+<div><a href= "./post">投稿ページだよ</div>
+
+<div><a href= "./timeline">みんなの投稿</div>
+{% endblock%}

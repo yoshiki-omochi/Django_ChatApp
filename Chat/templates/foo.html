@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>2番目のページ</title>
-</head>
-<body>
-	<form method = "Post">
-        {% csrf_token %}
-        {{User}}
-        <botton type = "submit">送信</botton>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}second page{% endblock%}
+
+{% block h1 %}第２のページ{% endblock %}
+
+{% block body %}
+<form method = "Post">
+    {% csrf_token %}
+    <button type="submit">送信</button>
+</form>
+{% endblock %}

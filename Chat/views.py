@@ -25,7 +25,7 @@ class PostView(View):
 
     def post(self, request, *args, **kwargs):
         f = TestuserForm()
-        return render(request, 'post.html', {'form1' : f})
+        return render(request, 'posted.html', {'form1' : f})
         
     
 
