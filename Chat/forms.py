@@ -1,9 +1,11 @@
 from django import forms
-from .models import TestUser
+from .models import User
 
 
     
-class TestuserForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = TestUser
+        model = User
         fields = ('name','email','comment',)  
+
+    

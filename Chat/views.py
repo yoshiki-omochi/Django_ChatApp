@@ -5,9 +5,15 @@ from django.shortcuts import render
 from django.views import generic
 
 from django.http import HttpResponse
-from Chat.forms import TestuserForm
+from Chat.forms import UserForm
 
 from django.views import View
+
+from .models import User
+
+from . import models,forms
+
+from django.shortcuts import redirect
 
 
 
@@ -17,20 +23,43 @@ class IndexView(generic.TemplateView):
 class FooView(generic.TemplateView):
     template_name = "foo.html"
 
-class PostView(View):
-    
-    def get(self,request,*args,**kwargs):
-        f = TestuserForm()
+class PostView(View): 
+    def get(self, request, *args, **kwargs):
+        f = UserForm()
         return render(request, 'post.html', {'form1' : f})
 
     def post(self, request, *args, **kwargs):
-        f = TestuserForm()
-        return render(request, 'posted.html', {'form1' : f})
+        context = {
+            'name' : request.POST['name'],
+            'email': request.POST['email'],
+            'comment': request.POST['comment'],
+        }
         
-    
+
+        user_form = UserForm(request.POST or None)
+        if user_form.is_valid():
+            user_form.save()
+
+        return render(request, 'posted.html', context)
 
 
-class TimelineView(generic.TemplateView):
-    template_name = "timeline.html"
+def timeline(request):
+    user_form = UserForm(request.POST or None)
+    if user_form.is_valid():
+        user_form.save()
+        #return redirect('posted : posted')
+
+    new_text = User.objects.all().order_by('-id')
+    contexts = {
+        'form':user_form,
+        'new_text':new_text,
+    }
+    return render(request, 'timeline.html', contexts)
+
+
+class TimelineView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'timeline.html', User)
 
 
