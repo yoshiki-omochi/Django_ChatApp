@@ -13,7 +13,6 @@ from .models import User
 
 from . import models,forms
 
-from django.shortcuts import redirect
 
 
 
@@ -44,17 +43,15 @@ class PostView(View):
 
 
 def timeline(request):
-    user_form = UserForm(request.POST or None)
-    if user_form.is_valid():
-        user_form.save()
-        #return redirect('posted : posted')
+    #user_form = UserForm(request.POST or None)
+    
 
-    new_text = User.objects.all().order_by('-id')
-    contexts = {
-        'form':user_form,
-        'new_text':new_text,
+    data = User.objects.all()
+    parms  = {
+        'message' : '投稿者',
+        'data': data, 
     }
-    return render(request, 'timeline.html', contexts)
+    return render(request, 'timeline.html', parms)
 
 
 class TimelineView(View):

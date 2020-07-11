@@ -10,7 +10,15 @@
 上が最新情報です
 <div><a href= "../">トップページに戻る</a></div>
 
+{% for i in data%}
 
-{{new_text}}
+    {{message}}
+    {{i.name}}
+    {{i.email}}
+    {{i.comment}}
+    <p>aaaaaa</p>
+    
+
+{% endfor %}
 タイトル
 {% endblock %}
