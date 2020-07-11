@@ -15,4 +15,4 @@ class User(models.Model):
     #created_at = models.DateTimeField(verbose_name = '作成日時',auto_now_add = True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
