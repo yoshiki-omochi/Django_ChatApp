@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'Chat.apps.ChatConfig',
+    'accounts.apps.AccountsConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -124,3 +125,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
