@@ -48,7 +48,9 @@ def timeline(request):
 
     data = User.objects.all()
     parms  = {
-        'message' : '投稿者',
+        'message1' : '投稿者',
+        'message2' : 'メールアドレス',
+        'message3' : '内容',
         'data': data, 
     }
     return render(request, 'timeline.html', parms)

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}ユーザ登録ページ{% endblock %}
+
+{% block h1 %}ユーザ登録のページ{% endblock %}
+
+{% block body%}
+<form action = "" method = "Post">
+{% csrf_token %}
+    <table>{{form.as_p}}
+    <button type="submit">送信</button>
+    </table>
+</form>
+{% endblock %}
