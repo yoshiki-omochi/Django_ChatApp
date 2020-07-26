@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang = "ja">
+
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{%endblock %}</title>
+    <head>
+
+    <body>
+    <p><font size = '8'>認証ありの掲示板</font></p>
+        <h1>{% block h1 %}{% endblock %}</h1>
+        {% block body %}{% endblock %}
+    </body>
+
+</html>

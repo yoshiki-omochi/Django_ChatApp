@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Posted Page{% endblock %}
+
+{% block h1 %}登録が完了しました。{% endblock %}
+
+{% block body %}
+<div><a href= "../">トップページに戻る</a></div>
+
+    <div>あなたの名前は"{{username}}"です</div>
+    <div>あなたのメールアドレスは"{{ email }}"です</div>
+    <div>パスワードは"{{password}}"です</div>
+{% endblock %}

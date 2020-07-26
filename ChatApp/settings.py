@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -138,5 +139,6 @@ SITE_ID = 1
 
 
 #ログインとログアウト後の遷移先を設定する
+LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/account/login'
